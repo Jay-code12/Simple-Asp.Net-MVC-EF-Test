@@ -1,0 +1,38 @@
+﻿@model Student
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form method="post">
+    <h2>Add Student Record</h2>
+    <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input type="type" asp-for="Name" value="" placeholder="Enter Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label asp-for="Age"></label>
+            <input type="number" asp-for="Age" value="" placeholder="Enter Display Order" class="form-control" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="row mt-2">
+            <div class="col-6">
+                <button class="form-control btn btn-primary" type="submit">Create</button>
+            </div>
+            <div class="col-6">
+                <a asp-controller="Student" asp-action="Index" class="form-control btn btn-light">View Student List</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_validationScriptsPartial" />
+    }
+}
